@@ -81,7 +81,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Hello {{auth()->user()->name ?? ''}}
+
+                    {{"<strong>dream on color</strong>"}}
+                    {{"<script> alert('this one will be shown like text no compilation here solution is to replace m39ofat by :'); </script>"}}
+
+                    {!! "<strong>dream on color</strong>" !!}
+                    {!! "<script>alert('this one will be shown like text no compilation here')</script>" !!}
                 </div>
 
                 <div class="links">
