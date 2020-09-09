@@ -14,7 +14,7 @@ class HobbyController extends Controller
      */
     public function index()
     {
-        //
+        dd('index');
     }
 
     /**
