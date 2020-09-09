@@ -4576,7 +4576,7 @@ readers do not read off random characters that represent icons */
 @charset "UTF-8";
 
 a.nav-link.active {
-  background: blue;
+  background: #727275;
   color: white;
 }
 
