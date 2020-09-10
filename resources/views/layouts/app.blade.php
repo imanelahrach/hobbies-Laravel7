@@ -35,6 +35,7 @@
                     <ul class="navbar-nav mr-auto">
                     <a class="nav-link {{Request::is('/') ? 'active' : ''}} " href="/">starting</a>
                     <a class="nav-link {{Request::is('infos') ? 'active' : ''}}" href="infos">infos</a>
+                    <a class="nav-link {{Request::is('hobby') ? 'active' : ''}}" href="hobby">hobby</a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
