@@ -6,7 +6,7 @@
         <div class="col-md-11">
             <div class="card">
                 <div class="card-header">All my hobbies</div>
-
+          
                 <div class="card-body">
                    <ul class="list-group">
                        
@@ -17,9 +17,10 @@
                            @endforeach
                        
                     </ul>
-
-                    
-
+                    <div class="mt-2">
+                        <a href="/hobby/create">
+                    <button class="btn btn-sm btn-success"><i class="fa fa-plus"></i> New Hobby</button></a>
+</div>
                 </div>
             </div>
         </div>
