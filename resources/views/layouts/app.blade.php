@@ -75,7 +75,21 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            @if($errors->any())
+            <div class="container">
+                <div class="alert alert-danger" role="alert">
+                    <ul class="mb-0">
+                        @foreach($errors->all() as $error)
+                            <li class="mb-0">
+                                {!! $error !!}
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+            @endif
+
+         @yield('content')
         </main>
     </div>
 </body>
