@@ -13,13 +13,13 @@
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" class="form-control {{$errors->has('name') ? 'border-danger' :''}}" 
-                                id="name" name="name" value="{{$tag->name ?? old('name')}}">
+                                id="name" name="name" value="{{old('name')  ??  $tag->name }}">
                             <small class="form-text text-danger">{!! $errors->first('name') !!}</small>
                             </div>
                             <div class="form-group">
                                 <label for="style">style</label>
                                 <textarea class="form-control {{$errors->has('style') ? 'border-danger' :''}}"
-                                     id="style" name="style" rows="5" >{{$tag->style ?? old('style')}}</textarea>
+                                     id="style" name="style" rows="5" >{{old('style') ?? $tag->style  }}</textarea>
                                 <small class="form-text text-danger">{!! $errors->first('style') !!}</small>
                             </div>
                             <input class="btn btn-primary mt-4" type="submit" value="update tag">
