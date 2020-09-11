@@ -22,6 +22,7 @@ Route::get('/infos', function () {
 });  */
 
 Route::resource('hobby','HobbyController');
+Route::resource('tags','TagController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
