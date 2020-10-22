@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
      */
         public function run()
     {
-        factory(App\User::class, 100)->create();
+        
         factory(App\User::class, 100)->create()
         ->each(function ($user){
             factory(App\Hobby::class, rand(1,8))->create(
