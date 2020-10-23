@@ -13,6 +13,7 @@
                                     <a text ="Show details" href="/hobby/{{$hobby->id}}" >{{$hobby->name}}</a>
                                     @auth
                                     <a class="btn btn-sm btn-light ml-2" href="/hobby/{{$hobby->id}}/edit" ><i class="fas fa-edit"></i> Edit </a>
+                                    <span class="mx-2">Posted by:<a href="/user/{{$hobby->user->id}}">{{ $hobby->user->name }}</a>  ({{ $hobby->user->hobbies->count() }} Hobbies)</span>
                                         <form class="float-right" style="display:inline" action="/hobby/{{$hobby->id}}" method="post">
                                         @csrf
                                         @method('DELETE')
@@ -20,7 +21,12 @@
                                         </form>
                                         @endauth
                                         <span class="float-right mx-2">{{ $hobby->created_at->diffForHumans() }}</span>
-                                </li>
+                                    <br>
+                                    @foreach($hobby->tags as $tag)
+                                        <a href=""><span class="badge badge-{{ $tag->style }}">{{ $tag->name }}</span></a>
+                                    @endforeach                              
+                                     
+                                      </li>
                            @endforeach
                     </ul>
                     <div class="mt-3">
