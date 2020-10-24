@@ -5,9 +5,17 @@
     <div class="row justify-content-center">
         <div class="col-md-11">
             <div class="card">
-                <div class="card-header">All my hobbies</div>
+            @isset($filter)
+                        <div class="card-header">Filtered hobbies by
+                            <span style="font-size: 130%;" class="badge badge-{{ $filter->style }}">{{ $filter->name }}</span>
+                            <span class="float-right"><a href="/hobby">Show all Hobbies</a></span>
+                        </div>
+                    @else
+                        <div class="card-header">All the hobbies</div>
+                    @endisset
                 <div class="card-body">
                    <ul class="list-group">
+                  
                            @foreach($hobbies as $hobby)
                                 <li class="list-group-item">
                                     <a text ="Show details" href="/hobby/{{$hobby->id}}" >{{$hobby->name}}</a>
@@ -23,7 +31,7 @@
                                         <span class="float-right mx-2">{{ $hobby->created_at->diffForHumans() }}</span>
                                     <br>
                                     @foreach($hobby->tags as $tag)
-                                        <a href=""><span class="badge badge-{{ $tag->style }}">{{ $tag->name }}</span></a>
+                                    <a href="/hobby/tag/{{ $tag->id }}"><span class="badge badge-{{ $tag->style }}">{{ $tag->name }}</span></a>
                                     @endforeach                              
                                      
                                       </li>
