@@ -5,7 +5,6 @@
             <div class="col-md-11">
                 <div class="card">
                     <div class="card-header">Hobby Detail</div>
-
                     <div class="card-body">
 <div class="row">
                             <div class="col-md-9">
