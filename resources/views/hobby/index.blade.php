@@ -19,8 +19,6 @@
                                 <li class="list-group-item">
                                 @if(file_exists('img/hobbies/' . $hobby->id . '_thumb.jpg'))
  <a title="Show Details" href="/hobby/{{ $hobby->id }}">
-                                        <img src="/img/thumb_landscape.jpg" alt="thumb">
-                                        {{ $hobby->name }}
                                         <img src="/img/hobbies/{{ $hobby->id }}_thumb.jpg" alt="Hobby Thumb">
                                     </a>
                                     @endif

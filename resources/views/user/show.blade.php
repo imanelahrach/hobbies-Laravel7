@@ -16,7 +16,7 @@
                                     @if($user->hobbies->count() > 0)
                                         @foreach($user->hobbies as $hobby)
                                             <li class="list-group-item">
-                                                <a title="Show Details" href="/hobby/{{ $hobby->id }}">{{ $hobby->name }}</a>
+                                          
                                                 @if(file_exists('img/hobbies/' . $hobby->id . '_thumb.jpg'))
                                                     <a title="Show Details" href="/hobby/{{ $hobby->id }}">
                                                         <img src="/img/hobbies/{{ $hobby->id }}_thumb.jpg" alt="Hobby Thumb">
