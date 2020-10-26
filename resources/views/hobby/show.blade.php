@@ -6,11 +6,11 @@
                 <div class="card">
                     <div class="card-header">Hobby Detail</div>
                     <div class="card-body">
-<div class="row">
+                        <div class="row">
                             <div class="col-md-9">
                                 <b>{{$hobby->name}}</b>
                                 <p>{{$hobby->description}}</p>
-                                @if($hobby->tags->count() > 0)
+                                    @if($hobby->tags->count() > 0)
                                     <b>Used Tags:</b> (Click to remove)
                                     <p>
                                         @foreach($hobby->tags as $tag)
@@ -28,10 +28,15 @@
                                 @endif
                             </div>
                             <div class="col-md-3">
-                                <a href="/img/400x300.jpg" data-lightbox="400x300.jpg" data-title="{{ $hobby->name }}">
-                                    <img class="img-fluid" src="/img/400x300.jpg" alt="">
-                                </a>
-                                <i class="fa fa-search-plus"></i> Click image to enlarge
+                                @if(Auth::user() && file_exists('img/hobbies/' . $hobby->id . '_large.jpg'))
+                                    <a href="/img/hobbies/{{$hobby->id}}_large.jpg" data-lightbox="img/hobbies/{{$hobby->id}}_large.jpg" data-title="{{ $hobby->name }}">
+                                        <img class="img-fluid" src="/img/hobbies/{{$hobby->id}}_large.jpg" alt="">
+                                    </a>
+                                    <i class="fa fa-search-plus"></i> Click image to enlarge
+                                @endif
+                                @if(!Auth::user() && file_exists('img/hobbies/' . $hobby->id . '_pixelated.jpg'))
+                                        <img class="img-fluid" src="/img/hobbies/{{$hobby->id}}_pixelated.jpg" alt="">
+                                @endif
                             </div>
                         </div>
                     </div>
